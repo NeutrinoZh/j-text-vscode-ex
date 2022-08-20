@@ -1,0 +1,25 @@
+{
+  "name": "j-text",
+  "displayName": "J-Text",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "jtext",
+      "aliases": ["J-Text", "jtext"],
+      "extensions": [".jt"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "jtext",
+      "scopeName": "source.jt",
+      "path": "./syntaxes/jtext.tmLanguage.json"
+    }]
+  }
+}

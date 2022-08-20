@@ -1,0 +1,73 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "J-Text",
+	"patterns": [
+        {
+            "include": "#consts"
+        },
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#variables"
+        }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.jtext",
+				"match": "\\b(inherit|const|link|as)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.jtext",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.jtext",
+					"match": "\\\\."
+				}
+			]
+		},
+        "comments": {
+            "name": "comment.jtext",
+			"begin": "#",
+			"end": "\n"
+        },
+        "numbers": {
+            "patterns": [{
+				"name": "constant.numeric.jtext",
+				"match": "[0-9]"
+			}]
+        },
+        "variables": {
+            "patterns": [{
+				"name": "variable.name.jtext",
+				"match": "\\w+(?= =|=)"
+			}]
+        },
+        "consts": {
+            "patterns": [
+                {
+                    "name": "constant.character.jtext",
+                    "match": "(?<=const )\\w+"
+		    	},
+                {
+                    "name": "constant.character.jtext",
+                    "match": "(?<== )([A-Za-z_][A-Za-z0-9_]*)"
+		    	}
+            ]
+        }
+	},
+	"scopeName": "source.jt"
+}
